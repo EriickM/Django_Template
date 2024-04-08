@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block titulo %} {% endblock titulo %}</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between; /* Distribuir elementos horizontalmente */
+        align-items: left; /* Centrar verticalmente los elementos */
+        margin-bottom: 20px; /* Margen inferior para separar las filas */
+        background-color: #f0f0f0; /* Color de fondo opcional */
+        padding: 10px; /* Espaciado interior opcional */
+        border-radius: 5px; /* Bordes redondeados opcionales */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+      }
+
+      .header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 80px 0;
+        position: relative;
+      }
+
+      .wave {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+      }
+
+      .content {
+        margin: 20px auto;
+        width: 80%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table.dataTable {
+        width: 100%;
+        margin: 0 auto;
+        clear: both;
+        border-collapse: collapse !important;
+        table-layout: fixed;
+        word-wrap: break-word;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table.dataTable thead th,
+      table.dataTable tbody td {
+        padding: 15px;
+      }
+
+      table.dataTable thead th {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      table.dataTable tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table.dataTable tbody tr:hover {
+        background-color: #ddd;
+      }
+
+      .dataTables_length,
+      .dataTables_filter,
+      .dataTables_info,
+      .dataTables_paginate {
+        padding: 15px;
+      }
+
+      .paginate_button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      .paginate_button:hover {
+        background-color: #45a049;
+      }
+
+      .paginate_button.current {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>{% block namePage %} {% endblock namePage %}</h1>
+      <img
+        class="wave"
+        src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928_960_720.jpg"
+        alt="Wave"
+      />
+    </div>
+
+    <div class="content">{% block content %} {% endblock content %}</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#dataTable").DataTable();
+      });
+    </script>
+  </body>
+</html>

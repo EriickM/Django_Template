@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+
+
+{% block titulo %}
+	Lista de Productos
+{% endblock titulo %}
+
+
+{% block namePage %}
+	Mi lista Productos
+{% endblock namePage %}
+	
+
+{% block content %}
+<table id="dataTable" class="display">
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in poductos %}
+    <tr>
+      <td>{{p.name}}</td>
+      <td>{{p.description}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="row">
+  {% if poductos.has_previous %}
+  <a href="?page={{poductos.previous_page_number}}">Prev</a>
+  {% endif %} {% for i in poductos.paginator.page_range %}
+  <a href="?page={{i}}">{{i}}</a>
+  {% endfor %} {% if poductos.has_next %}
+  <a href="?page={{poductos.next_page_number}}">Next</a>
+  {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalles del Producto</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+
+  .header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    position: relative;
+  }
+
+  .wave {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .card p {
+    margin: 10px 0;
+    color: #666;
+  }
+
+  .card .label {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Detalles del Producto</h1>
+  <img class="wave" src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928_960_720.jpg" alt="Wave">
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>{{product.name}}</h2>
+    <p class="label">Detalles:</p>
+    <p>{{product.description}}</p>
+    <p class="label">Costo:</p>
+    <p>${{product.price}}</p>
+    <p class="label">Categoría:</p>
+    <p>{{product.category}}</p>
+  </div>
+</div>
+
+</body>
+</html>
